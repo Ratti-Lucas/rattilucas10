@@ -274,3 +274,50 @@ footer {
         background-attachment: scroll;
     }
 }
+
+
+/* Acessibilidade, foco por teclado e acabamento responsivo */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #e0c17f;
+    outline-offset: 3px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: #d6bb88;
+    color: #142b45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .brand {
+        white-space: normal;
+        font-size: 0.95rem;
+    }
+
+    .section,
+    .content {
+        padding: 20px 18px;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+    }
+}
